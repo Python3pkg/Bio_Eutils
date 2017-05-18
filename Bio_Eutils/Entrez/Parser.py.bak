@@ -43,7 +43,7 @@ from io import BytesIO
 # Importing these functions with leading underscore as not intended for reuse
 from Bio_Eutils._py3k import urlopen as _urlopen
 from Bio_Eutils._py3k import urlparse as _urlparse
-from Bio_Eutils._py3k import str
+from Bio_Eutils._py3k import unicode
 
 __docformat__ = "restructuredtext en"
 
@@ -71,9 +71,9 @@ class StringElement(str):
         return "StringElement(%s, attributes=%s)" % (text, repr(attributes))
 
 
-class UnicodeElement(str):
+class UnicodeElement(unicode):
     def __repr__(self):
-        text = str.__repr__(self)
+        text = unicode.__repr__(self)
         try:
             attributes = self.attributes
         except AttributeError:

@@ -24,7 +24,7 @@ By default, all tests are run.
 """
 
 # The default verbosity (not verbose)
-
+from __future__ import print_function
 
 VERBOSITY = 0
 
@@ -45,7 +45,7 @@ from io import BytesIO
 # Biopython is installed, so we can't use this:
 # from Bio._py3k import StringIO
 try:
-    from io import StringIO  # Python 2 (byte strings)
+    from StringIO import StringIO  # Python 2 (byte strings)
 except ImportError:
     from io import StringIO  # Python 3 (unicode strings)
 
